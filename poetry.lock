@@ -1,0 +1,31 @@
+[[package]]
+name = "emoji"
+version = "1.6.1"
+description = "Emoji for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+dev = ["pytest", "coverage", "coveralls"]
+
+[[package]]
+name = "urbandictionary"
+version = "1.1"
+description = "Simple Python wrapper for Urban Dictionary API."
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^2.7"
+content-hash = "65d243114def03f8d66ad522f1df04548b5cb2083c3b82eb00be853ca87195f2"
+
+[metadata.files]
+emoji = [
+    {file = "emoji-1.6.1.tar.gz", hash = "sha256:53d61a8e4c025f6c295ab99c842302c66d47952199c4fde66dd060dee3ad4324"},
+]
+urbandictionary = [
+    {file = "urbandictionary-1.1-py2.py3-none-any.whl", hash = "sha256:3435cd5cd75708f47d45a3949265c4a36852d03587c2df973e93f1ef463fb8f5"},
+]
