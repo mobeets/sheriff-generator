@@ -1,8 +1,8 @@
 # -*- coding: UTF-8 -*-
 import string
 import emoji
-import urbandictionary as ud
-ALL_ALIASES = emoji.unicode_codes.UNICODE_EMOJI_ALIAS.values()
+import urbandictionary_api as ud
+ALL_ALIASES = list(emoji.unicode_codes.UNICODE_EMOJI_ALIAS_ENGLISH.values())
 
 def fill_pattern(a):
 	head = ['   :cop:'] # no sheriff emoji yet :(
@@ -40,7 +40,7 @@ def get_emojis_from_query(args):
 
 def clean_defn(defn):
 	defn  =defn.split('\n')[0].strip()
-	ignores = [str(x) for x in xrange(10)] + [x for x in string.punctuation]
+	ignores = [str(x) for x in range(10)] + [x for x in string.punctuation]
 	while any([defn.startswith(x) for x in ignores]):
 		defn = defn[1:].strip()
 	return defn
@@ -62,8 +62,8 @@ def main(args):
 	title = args
 	defn = get_definition(title)
 	msg = "Howdy, I'm the sheriff of {}. {}".format(title, defn)
-	print emoji.emojize(pattern, use_aliases=True)
-	print msg
+	print(emoji.emojize(pattern, use_aliases=True))
+	print(msg)
 
 if __name__ == '__main__':
 	import sys
